@@ -106,7 +106,7 @@ const Navigation = ({ activeSection, scrollTo, isDark, toggleTheme }) => (
         className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent cursor-pointer" 
         onClick={() => scrollTo('hero')}
       >
-        HS.ai
+        HS.tech
       </div>
       <div className={`hidden md:flex space-x-8 text-sm font-medium transition-colors ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
         {['Skills', 'Experience', 'Education', 'Contact'].map((item) => (
