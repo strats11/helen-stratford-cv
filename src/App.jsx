@@ -35,7 +35,7 @@ const DATA = {
       { name: "Workflow Automation (Zapier)", level: 95 },
       { name: "Google Apps Script", level: 85 },
       { name: "Rapid Prototyping", level: 90 },
-      { name: "GEO / LLM Visibility", level: 80 }
+      { name: "GEO/AEO - LLM Visibility", level: 80 }
     ],
     web: [
       { name: "React.js Basics", level: 65 },
@@ -220,7 +220,7 @@ const ChatInterface = ({ isDark }) => {
       let response = "";
       switch(query) {
         case "Tell me about AI Strategy":
-          response = "Helen currently leads AI-augmented workflows at Pan Macmillan. She implements Generative Engine Optimization (GEO) to ensure content is visible to LLMs and uses AI for rapid prototyping.";
+          response = "Helen currently leads AI-augmented workflows at Pan Macmillan. She implements Generative & Answer Engine Optimization (GEOAEO) to ensure content is visible to LLMs and uses AI for rapid prototyping.";
           break;
         case "Can she code?":
           response = "Yes. While primarily a Strategist/PM, Helen builds in React.js, manages REST APIs/Webhooks, and uses Google Apps Script & Zapier to engineer automated solutions.";
