@@ -35,7 +35,8 @@ const DATA = {
       { name: "Workflow Automation (Zapier)", level: 95 },
       { name: "Google Apps Script", level: 85 },
       { name: "Rapid Prototyping", level: 90 },
-      { name: "GEO/AEO - LLM Visibility", level: 80 }
+      { name: "GEO/AEO - LLM Visibility", level: 80 },
+      { name: "NotebookLM", level: 85 }
     ],
     web: [
       { name: "React.js Basics", level: 65 },
