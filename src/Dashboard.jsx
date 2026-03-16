@@ -45,7 +45,7 @@ const ALT_LEGS = {
 };
 
 const BUS_STOPS = {
-  morning: { id: "490013643N", name: "Thorpe Hall Road", letter: "D", direction: "towards Walthamstow Central" },
+  morning: { id: "490013643S", name: "Thorpe Hall Road", letter: "D", direction: "towards Walthamstow Central" },
   afternoon: { id: "490014164C", name: "Walthamstow Bus Station", letter: "C", direction: "towards Barkingside" },
 };
 
@@ -384,7 +384,7 @@ function BusTracker({ time }) {
 
 /* ── MAIN DASHBOARD ── */
 export default function Dashboard() {
-  const [name, setName] = useState("Helen");
+  const [name, setName] = useState("Friend");
   const [editing, setEditing] = useState(false);
   const [todos, setTodos] = useState([{ text: "Learn what HTML does", done: true }, { text: "Explore CSS styling", done: false }, { text: "Try JavaScript basics", done: false }, { text: "Build my first web app!", done: false }]);
   const [newTodo, setNewTodo] = useState("");
