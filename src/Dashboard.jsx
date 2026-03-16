@@ -384,9 +384,9 @@ function BusTracker({ time }) {
 
 /* ── MAIN DASHBOARD ── */
 export default function Dashboard() {
-  const [name, setName] = useState("Friend");
+  const [name, setName] = useState("Helen");
   const [editing, setEditing] = useState(false);
-  const [todos, setTodos] = useState([{ text: "Learn what HTML does", done: true }, { text: "Explore CSS styling", done: false }, { text: "Try JavaScript basics", done: false }, { text: "Build my first web app!", done: false }]);
+  const [todos, setTodos] = useState([{ text: "Complete Anthropic 1-3 courses", done: true }, { text: "Complete Anthropic 4-6", done: false }, { text: "Learn about MCP", done: false }, { text: "Review Claude Agentic capabilities", done: false }]);
   const [newTodo, setNewTodo] = useState("");
   const [quote, setQuote] = useState(quotes[0]);
   const [time, setTime] = useState(new Date());
@@ -404,7 +404,7 @@ export default function Dashboard() {
   return (
     <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)", color: "#f1f5f9", fontFamily: "'Segoe UI', system-ui, sans-serif", padding: "24px" }}>
       <div style={{ textAlign: "center", marginBottom: 32 }}>
-        <p style={{ fontSize: 14, color: ACCENT, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", marginBottom: 4 }}>My Dashboard</p>
+        <p style={{ fontSize: 14, color: ACCENT, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", marginBottom: 4 }}>My Travel Dashboard</p>
         <h1 style={{ fontSize: 32, fontWeight: 700, margin: "8px 0" }}>
           {greeting},{" "}
           {editing ? <input autoFocus value={name} onChange={e => setName(e.target.value)} onBlur={() => setEditing(false)} onKeyDown={e => e.key === "Enter" && setEditing(false)} style={{ background: "transparent", border: "none", borderBottom: `2px solid ${ACCENT}`, color: "#f1f5f9", fontSize: 32, fontWeight: 700, width: 160, outline: "none", textAlign: "center" }} />
@@ -464,7 +464,7 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-      <p style={{ textAlign: "center", color: "#475569", fontSize: 12, marginTop: 32 }}>Built with React — click your name to edit it!</p>
+      <p style={{ textAlign: "center", color: "#475569", fontSize: 12, marginTop: 32 }}>Built with React — Helen Stratford</p>
     </div>
   );
 }
