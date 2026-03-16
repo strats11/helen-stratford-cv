@@ -384,7 +384,7 @@ function BusTracker({ time }) {
 
 /* ── MAIN DASHBOARD ── */
 export default function Dashboard() {
-  const [name, setName] = useState("Friend");
+  const [name, setName] = useState("Helen");
   const [editing, setEditing] = useState(false);
   const [todos, setTodos] = useState([{ text: "Learn what HTML does", done: true }, { text: "Explore CSS styling", done: false }, { text: "Try JavaScript basics", done: false }, { text: "Build my first web app!", done: false }]);
   const [newTodo, setNewTodo] = useState("");
