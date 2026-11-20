@@ -905,13 +905,13 @@
   <script>
     // =========================================================================
     // EASY-TO-EDIT POLAROID PHOTOS & CAPTIONS
-    // Replace `imageUrl` with your own image links or local files (e.g. "images/trip1.jpg")
+    // Replace `imageUrl` with your own image links or local files (e.g. "macsfish.jpg")
     // =========================================================================
     const POLAROID_MEMORIES = [
       {
         id: 'pol-1',
         imageUrl: 'macsfish.jpg',
-        caption: 'Mac's Fishcamp',
+        caption: "Mac's Fishcamp",
         location: 'Coastal Escape',
         tilt: '-2.5deg'
       },
@@ -957,7 +957,7 @@
     // Update any of these fields to customize the surprise revealed in the gift box
     // =========================================================================
     const MEAL_VOUCHER_DETAILS = {
-      title: 'A 3 course Meal, Sides and Cocktail at Marco Piere White's Steakhouse Co.',
+      title: "A 3 course Meal, Sides and Cocktail at Marco Piere White's Steakhouse Co.",
       code: 'MARSELLE-50-FEAST',
       venue: '109-117 Middlesex St, London',
       guests: 'Marselle + Traveling Companion · Flexible Date',
@@ -1123,35 +1123,60 @@
       const grid = document.getElementById('polaroidGrid');
       if (!grid) return;
 
-      grid.innerHTML = POLAROID_MEMORIES.map((item) => {
-        const safeUrl = escapeHtml(item.imageUrl);
-        const safeCaption = escapeHtml(item.caption);
-        const safeLocation = escapeHtml(item.location || 'Travel Memory');
-        const safeTilt = escapeHtml(item.tilt || '0deg');
+      grid.innerHTML = '';
 
-        return `
-          <figure class="reveal-item is-visible polaroid-card flex flex-col" style="transform: rotate(${safeTilt});">
-            <div onclick="openPolaroidModal('${safeUrl}', '${safeCaption}', '${safeLocation}')"
-                 class="relative aspect-[4/3] w-full rounded-xs overflow-hidden bg-sand-100 cursor-zoom-in group">
-              <img src="${safeUrl}" alt="${safeCaption}" loading="lazy"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <span class="opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full bg-espresso-900/75 text-white text-[11px] font-medium backdrop-blur-2xs">
-                Expand ⤢
-              </span>
-            </div>
+      POLAROID_MEMORIES.forEach((item) => {
+        const safeLocation = item.location || 'Travel Memory';
+        const safeTilt = item.tilt || '0deg';
 
-            <div class="pt-4 px-1">
-              <p class="font-handwriting text-2xl sm:text-[26px] leading-snug text-espresso-900">
-                ${safeCaption}
-              </p>
-              <div class="mt-2 flex items-center justify-between text-[11px] text-espresso-800/55">
-                <span>📍 ${safeLocation}</span>
-                <span>Click photo to zoom</span>
-              </div>
-            </div>
-          </figure>
-        `;
-      }).join('');
+        const figure = document.createElement('figure');
+        figure.className = 'reveal-item is-visible polaroid-card flex flex-col';
+        figure.style.transform = `rotate(${safeTilt})`;
+
+        const zoomBox = document.createElement('div');
+        zoomBox.className = 'relative aspect-[4/3] w-full rounded-xs overflow-hidden bg-sand-100 cursor-zoom-in group';
+        zoomBox.addEventListener('click', () => {
+          openPolaroidModal(item.imageUrl, item.caption, safeLocation);
+        });
+
+        const img = document.createElement('img');
+        img.src = item.imageUrl;
+        img.alt = item.caption;
+        img.loading = 'lazy';
+        img.className = 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500';
+
+        const badge = document.createElement('span');
+        badge.className = 'opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full bg-espresso-900/75 text-white text-[11px] font-medium backdrop-blur-2xs';
+        badge.textContent = 'Expand ⤢';
+
+        zoomBox.appendChild(img);
+        zoomBox.appendChild(badge);
+
+        const captionWrap = document.createElement('div');
+        captionWrap.className = 'pt-4 px-1';
+
+        const captionP = document.createElement('p');
+        captionP.className = 'font-handwriting text-2xl sm:text-[26px] leading-snug text-espresso-900';
+        captionP.textContent = item.caption;
+
+        const metaRow = document.createElement('div');
+        metaRow.className = 'mt-2 flex items-center justify-between text-[11px] text-espresso-800/55';
+
+        const locSpan = document.createElement('span');
+        locSpan.textContent = `📍 ${safeLocation}`;
+
+        const hintSpan = document.createElement('span');
+        hintSpan.textContent = 'Click photo to zoom';
+
+        metaRow.appendChild(locSpan);
+        metaRow.appendChild(hintSpan);
+        captionWrap.appendChild(captionP);
+        captionWrap.appendChild(metaRow);
+
+        figure.appendChild(zoomBox);
+        figure.appendChild(captionWrap);
+        grid.appendChild(figure);
+      });
     }
 
     function openPolaroidModal(src, caption, location) {
