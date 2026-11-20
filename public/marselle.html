@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 50th Birthday Marselle — Passport to Fifty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Caveat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            handwriting: ['"Caveat"', 'cursive'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            sand: {
+              50: '#FDFBF7',
+              100: '#F7F1E5',
+              200: '#EDE2CE',
+              300: '#DECBA9',
+            },
+            terracotta: {
+              400: '#D47656',
+              500: '#C45D3B',
+              600: '#A5482A',
+              700: '#7D341E',
+            },
+            ocean: {
+              400: '#3C8C94',
+              500: '#276B73',
+              600: '#1D5259',
+              700: '#143B40',
+            },
+            gold: {
+              300: '#E8C56B',
+              400: '#D4A843',
+              500: '#B5892A',
+            },
+            espresso: {
+              800: '#2A211B',
+              900: '#1B1511',
+            }
+          },
+          boxShadow: {
+            polaroid: '0 14px 28px -8px rgba(27, 21, 17, 0.16), 0 4px 10px -3px rgba(27, 21, 17, 0.08)',
+            polaroidHover: '0 24px 42px -10px rgba(27, 21, 17, 0.24), 0 8px 16px -4px rgba(196, 93, 59, 0.16)',
+            voucher: '0 25px 60px -15px rgba(20, 59, 64, 0.28), 0 10px 25px -8px rgba(181, 137, 42, 0.2)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .topo-bg {
+      background-color: #FDFBF7;
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(212, 118, 86, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 88% 24%, rgba(39, 107, 115, 0.08) 0%, transparent 48%),
+        radial-gradient(circle at 50% 85%, rgba(212, 168, 67, 0.09) 0%, transparent 50%);
+    }
+
+    .vintage-map-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.5;
+      overflow: hidden;
+      mix-blend-mode: multiply;
+    }
+
+    .vintage-map-svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.04);
+    }
+
+    header,
+    main,
+    footer,
+    #toastBanner {
+      position: relative;
+      z-index: 10;
+    }
+
+    #toastBanner {
+      position: fixed;
+      z-index: 50;
+    }
+
+    .dashed-route {
+      background-image: repeating-linear-gradient(
+        to right,
+        rgba(196, 93, 59, 0.35) 0,
+        rgba(196, 93, 59, 0.35) 8px,
+        transparent 8px,
+        transparent 16px
+      );
+      height: 2px;
+    }
+
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .compass-spin {
+      animation: spinSlow 45s linear infinite;
+    }
+
+    @keyframes floatBob {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .gift-float {
+      animation: floatBob 4s ease-in-out infinite;
+    }
+
+    .gift-stage {
+      perspective: 1100px;
+    }
+
+    .gift-rotator {
+      position: relative;
+      width: 190px;
+      height: 190px;
+      margin: 0 auto;
+      transform-style: preserve-3d;
+      transition: transform 0.25s ease-out;
+      cursor: pointer;
+    }
+
+    .gift-rotator.auto-spin {
+      animation: giftSpin3D 11s linear infinite;
+    }
+
+    .gift-rotator.paused {
+      animation-play-state: paused;
+    }
+
+    @keyframes giftSpin3D {
+      0%   { transform: rotateX(-18deg) rotateY(0deg); }
+      50%  { transform: rotateX(-18deg) rotateY(180deg); }
+      100% { transform: rotateX(-18deg) rotateY(360deg); }
+    }
+
+    .gift-face {
+      position: absolute;
+      width: 190px;
+      height: 160px;
+      top: 30px;
+      left: 0;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backface-visibility: visible;
+      box-shadow: inset 0 0 24px rgba(0,0,0,0.12);
+    }
+
+    .gift-front  { transform: translateZ(95px); background: linear-gradient(145deg, #C45D3B, #9E4326); }
+    .gift-back   { transform: rotateY(180deg) translateZ(95px); background: linear-gradient(145deg, #A5482A, #7D341E); }
+    .gift-right  { transform: rotateY(90deg) translateZ(95px); background: linear-gradient(145deg, #B55030, #8C3B21); }
+    .gift-left   { transform: rotateY(-90deg) translateZ(95px); background: linear-gradient(145deg, #B55030, #8C3B21); }
+    .gift-bottom { transform: rotateX(-90deg) translateZ(65px); background: #6E2B17; }
+
+    .ribbon-v {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 30px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #C6962D, #F2D37E, #C6962D);
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    }
+
+    .ribbon-h {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 24px;
+      transform: translateY(-50%);
+      background: linear-gradient(180deg, #C6962D, #F2D37E, #C6962D);
+      opacity: 0.92;
+    }
+
+    .gift-lid-assembly {
+      position: absolute;
+      top: 0;
+      left: -6px;
+      width: 202px;
+      height: 44px;
+      transform-style: preserve-3d;
+      transform-origin: bottom center;
+      transition: transform 0.85s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+    }
+
+    .gift-box-opened .gift-lid-assembly {
+      transform: translate3d(0, -82px, -35px) rotateX(68deg) rotateZ(-10deg);
+    }
+
+    .lid-face {
+      position: absolute;
+      width: 202px;
+      height: 44px;
+      top: 0;
+      left: 0;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .lid-front  { transform: translateZ(101px); background: linear-gradient(145deg, #D47656, #B55030); }
+    .lid-back   { transform: rotateY(180deg) translateZ(101px); background: linear-gradient(145deg, #B55030, #8C3B21); }
+    .lid-right  { transform: rotateY(90deg) translateZ(101px); background: linear-gradient(145deg, #C45D3B, #9E4326); }
+    .lid-left   { transform: rotateY(-90deg) translateZ(101px); background: linear-gradient(145deg, #C45D3B, #9E4326); }
+    .lid-top    {
+      width: 202px;
+      height: 202px;
+      top: -79px;
+      transform: rotateX(90deg);
+      background: linear-gradient(135deg, #DF8566, #C45D3B);
+    }
+
+    .lid-ribbon-v {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 32px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #C6962D, #F4D88A, #C6962D);
+    }
+
+    .lid-top-ribbon-x {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 32px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #C6962D, #F4D88A, #C6962D);
+    }
+
+    .lid-top-ribbon-y {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 32px;
+      transform: translateY(-50%);
+      background: linear-gradient(180deg, #C6962D, #F4D88A, #C6962D);
+    }
+
+    .bow-knot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 44px;
+      height: 44px;
+      transform: translate(-50%, -50%) translateZ(10px);
+      border-radius: 9999px;
+      background: radial-gradient(circle at 35% 35%, #FCE49C, #D4A843 65%, #966D18);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .polaroid-card {
+      background: #FFFFFF;
+      padding: 14px 14px 22px 14px;
+      border-radius: 6px;
+      box-shadow: 0 14px 28px -8px rgba(27, 21, 17, 0.16), 0 4px 10px -3px rgba(27, 21, 17, 0.08);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    }
+
+    .polaroid-card:hover {
+      transform: rotate(0deg) translateY(-8px) scale(1.02) !important;
+      box-shadow: 0 24px 42px -10px rgba(27, 21, 17, 0.24), 0 8px 16px -4px rgba(196, 93, 59, 0.16);
+      z-index: 20;
+    }
+
+    @keyframes confettiFall {
+      0% {
+        transform: translateY(-20px) rotate(0deg) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(260px) rotate(540deg) scale(0.7);
+        opacity: 0;
+      }
+    }
+
+    .confetti-piece {
+      position: absolute;
+      top: 10px;
+      border-radius: 3px;
+      pointer-events: none;
+      animation: confettiFall 1.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F7F1E5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4A843;
+      border-radius: 9999px;
+      border: 2px solid #F7F1E5;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C45D3B;
+    }
+  </style>
+</head>
+<body class="topo-bg text-espresso-900 font-sans antialiased selection:bg-terracotta-500 selection:text-white overflow-x-hidden">
+
+  <!-- Fixed Vintage Cartography Background Layer at 50% Opacity -->
+  <div class="vintage-map-backdrop" aria-hidden="true">
+    <svg class="vintage-map-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="parchmentVignette" cx="50%" cy="50%" r="65%">
+          <stop offset="0%" stop-color="#F6ECD8" stop-opacity="0.35" />
+          <stop offset="75%" stop-color="#E7D6B5" stop-opacity="0.65" />
+          <stop offset="100%" stop-color="#CBB286" stop-opacity="0.9" />
+        </radialGradient>
+        <pattern id="antiqueHatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+          <line x1="0" y1="0" x2="0" y2="12" stroke="#8C6239" stroke-opacity="0.14" stroke-width="1" />
+        </pattern>
+      </defs>
+
+      <rect width="1600" height="900" fill="url(#parchmentVignette)" />
+      <rect x="28" y="24" width="1544" height="852" rx="6" fill="none" stroke="#6E4B2A" stroke-width="2.2" stroke-opacity="0.45" />
+      <rect x="36" y="32" width="1528" height="836" rx="4" fill="none" stroke="#8C6239" stroke-width="1" stroke-dasharray="6 4" stroke-opacity="0.4" />
+
+      <g stroke="#7A5634" stroke-width="0.9" stroke-opacity="0.28" fill="none">
+        <line x1="36" y1="150" x2="1564" y2="150" />
+        <line x1="36" y1="295" x2="1564" y2="295" />
+        <line x1="36" y1="450" x2="1564" y2="450" stroke-dasharray="10 6" stroke-opacity="0.42" />
+        <line x1="36" y1="605" x2="1564" y2="605" />
+        <line x1="36" y1="750" x2="1564" y2="750" />
+        <line x1="220" y1="32" x2="220" y2="868" />
+        <line x1="420" y1="32" x2="420" y2="868" />
+        <line x1="620" y1="32" x2="620" y2="868" />
+        <line x1="800" y1="32" x2="800" y2="868" stroke-dasharray="10 6" stroke-opacity="0.42" />
+        <line x1="980" y1="32" x2="980" y2="868" />
+        <line x1="1180" y1="32" x2="1180" y2="868" />
+        <line x1="1380" y1="32" x2="1380" y2="868" />
+      </g>
+
+      <g stroke="#9E4326" stroke-width="0.8" stroke-opacity="0.22" fill="none">
+        <line x1="1260" y1="650" x2="180" y2="110" />
+        <line x1="1260" y1="650" x2="540" y2="60" />
+        <line x1="1260" y1="650" x2="920" y2="60" />
+        <line x1="1260" y1="650" x2="1520" y2="220" />
+        <line x1="1260" y1="650" x2="1520" y2="650" />
+        <line x1="1260" y1="650" x2="760" y2="830" />
+        <line x1="1260" y1="650" x2="260" y2="790" />
+      </g>
+
+      <g fill="#C9A878" fill-opacity="0.42" stroke="#6E4B2A" stroke-width="1.6" stroke-opacity="0.52">
+        <path d="M165 155 Q255 115 365 142 Q435 162 415 225 Q375 270 335 305 Q315 345 275 335 Q245 295 215 255 Q150 220 165 155 Z" />
+        <path d="M345 385 Q405 395 435 445 Q455 515 415 605 Q385 685 352 735 Q332 715 332 655 Q318 555 308 465 Q312 405 345 385 Z" />
+        <path d="M685 155 Q765 130 855 148 Q895 175 875 225 Q835 255 775 252 Q715 248 685 210 Z" />
+        <path d="M695 295 Q785 282 865 315 Q925 365 905 455 Q882 545 832 645 Q795 705 768 695 Q745 635 725 555 Q665 485 655 405 Q655 335 695 295 Z" />
+        <path d="M905 148 Q1055 118 1235 145 Q1355 178 1375 255 Q1335 335 1245 365 Q1135 385 1035 345 Q945 315 905 255 Z" />
+        <path d="M1185 535 Q1275 515 1345 555 Q1375 615 1325 665 Q1245 685 1185 645 Q1155 585 1185 535 Z" />
+      </g>
+
+      <g fill="url(#antiqueHatch)" opacity="0.55">
+        <path d="M695 295 Q785 282 865 315 Q925 365 905 455 Q882 545 832 645 Q795 705 768 695 Q745 635 725 555 Q665 485 655 405 Q655 335 695 295 Z" />
+      </g>
+
+      <g transform="translate(1260, 650)" opacity="0.65">
+        <circle cx="0" cy="0" r="54" fill="#F6ECD8" fill-opacity="0.5" stroke="#6E4B2A" stroke-width="1.4" />
+        <circle cx="0" cy="0" r="44" fill="none" stroke="#8C6239" stroke-width="0.9" stroke-dasharray="3 3" />
+        <polygon points="0,-52 9,-11 0,0" fill="#9E4326" />
+        <polygon points="0,-52 -9,-11 0,0" fill="#6E4B2A" />
+        <polygon points="0,52 9,11 0,0" fill="#6E4B2A" />
+        <polygon points="0,52 -9,11 0,0" fill="#9E4326" />
+        <polygon points="52,0 11,9 0,0" fill="#9E4326" />
+        <polygon points="52,0 11,-9 0,0" fill="#6E4B2A" />
+        <polygon points="-52,0 -11,9 0,0" fill="#6E4B2A" />
+        <polygon points="-52,0 -11,-9 0,0" fill="#9E4326" />
+        <circle cx="0" cy="0" r="6" fill="#D4A843" stroke="#6E4B2A" stroke-width="1.2" />
+      </g>
+
+      <g fill="#5C3D21" fill-opacity="0.48" font-family="Georgia, serif" font-style="italic" font-size="16" letter-spacing="4">
+        <text x="145" y="95">TERRA INCOGNITA · ANNO DOMINI MCMLXXVI</text>
+        <text x="725" y="475" font-size="14" letter-spacing="5">AFRICA AUSTRALIS</text>
+        <text x="975" y="795" font-size="13" letter-spacing="3">MARE AUSTRALE · 50° HORIZONS</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Toast Banner -->
+  <div id="toastBanner" role="status" aria-live="polite"
+       class="fixed bottom-5 right-5 z-50 max-w-sm bg-espresso-900 text-sand-50 px-5 py-3.5 rounded-2xl shadow-2xl border border-gold-400/40 flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <span class="w-2.5 h-2.5 rounded-full bg-gold-400 shrink-0"></span>
+    <p id="toastMessage" class="text-sm font-medium"></p>
+  </div>
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-sand-50/85 border-b border-sand-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <span class="w-9 h-9 rounded-full bg-terracotta-500/12 border border-terracotta-500/30 flex items-center justify-center text-terracotta-600 group-hover:bg-terracotta-500 group-hover:text-white transition-colors">
+          <svg class="w-4 h-4 compass-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9" />
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+          </svg>
+        </span>
+        <div>
+          <span class="font-serif text-lg sm:text-xl font-bold tracking-tight text-espresso-900">Marselle · 50</span>
+          <span class="hidden sm:inline-block ml-2 text-[11px] uppercase tracking-widest text-ocean-600 font-semibold">Est. 1976</span>
+        </div>
+      </a>
+
+      <nav aria-label="Page sections" class="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-medium">
+        <a href="#south-africa-1976" class="px-3 py-2 rounded-full text-espresso-800 hover:bg-sand-200/70 transition-colors">1976 SA</a>
+        <a href="#world-1976" class="px-3 py-2 rounded-full text-espresso-800 hover:bg-sand-200/70 transition-colors">1976 World</a>
+        <a href="#polaroids" class="px-3 py-2 rounded-full text-espresso-800 hover:bg-sand-200/70 transition-colors">Polaroids</a>
+        <a href="#gift-experience" class="px-3.5 py-2 rounded-full bg-terracotta-500 text-white hover:bg-terracotta-600 shadow-sm transition-colors">Gift Box</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO -->
+    <section id="hero" class="relative pt-10 pb-20 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 overflow-hidden">
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-80 h-80 sm:w-[28rem] sm:h-[28rem] rounded-full border border-gold-400/20 flex items-center justify-center">
+          <div class="w-64 h-64 sm:w-96 sm:h-96 rounded-full border border-dashed border-terracotta-400/25 compass-spin"></div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-sand-100/90 to-transparent"></div>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-7 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sand-100 border border-gold-400/40 text-ocean-700 text-xs sm:text-sm font-semibold tracking-wide mb-6 shadow-xs">
+              <svg class="w-4 h-4 text-terracotta-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L19 21L12 17L5 21L12 2Z" />
+              </svg>
+              <span>HALF A CENTURY OF HORIZONS &amp; DISCOVERY</span>
+            </div>
+
+            <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.03] tracking-tight text-espresso-900">
+              Happy <span class="text-terracotta-500 italic font-semibold">50th</span> Birthday
+              <span class="block mt-1 text-ocean-700">Marselle</span>
+            </h1>
+
+            <p class="mt-6 text-base sm:text-lg text-espresso-800/85 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              From golden coastal roads and winding mountain passes to unplanned detours and unforgettable sunsets—here’s to fifty vibrant years of curiosity, courage, and chasing new horizons.
+            </p>
+
+            <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs sm:text-sm">
+              <div class="px-4 py-2 rounded-xl bg-white/90 border border-sand-200 shadow-xs flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-terracotta-500"></span>
+                <span class="font-semibold text-espresso-900">Born 1976</span>
+                <span class="text-espresso-800/60">· Golden Edition</span>
+              </div>
+              <div class="px-4 py-2 rounded-xl bg-white/90 border border-sand-200 shadow-xs flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-ocean-500"></span>
+                <span class="font-semibold text-espresso-900">Next Stop: 50+</span>
+                <span class="text-espresso-800/60">· Endless Stamps</span>
+              </div>
+            </div>
+
+            <div class="mt
