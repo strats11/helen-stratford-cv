@@ -390,4 +390,930 @@
 
       <g transform="translate(1260, 650)" opacity="0.65">
         <circle cx="0" cy="0" r="54" fill="#F6ECD8" fill-opacity="0.5" stroke="#6E4B2A" stroke-width="1.4" />
-        <circle cx
+        <circle cx="0" cy="0" r="44" fill="none" stroke="#8C6239" stroke-width="0.9" stroke-dasharray="3 3" />
+        <polygon points="0,-52 9,-11 0,0" fill="#9E4326" />
+        <polygon points="0,-52 -9,-11 0,0" fill="#6E4B2A" />
+        <polygon points="0,52 9,11 0,0" fill="#6E4B2A" />
+        <polygon points="0,52 -9,11 0,0" fill="#9E4326" />
+        <polygon points="52,0 11,9 0,0" fill="#9E4326" />
+        <polygon points="52,0 11,-9 0,0" fill="#6E4B2A" />
+        <polygon points="-52,0 -11,9 0,0" fill="#6E4B2A" />
+        <polygon points="-52,0 -11,-9 0,0" fill="#9E4326" />
+        <circle cx="0" cy="0" r="6" fill="#D4A843" stroke="#6E4B2A" stroke-width="1.2" />
+      </g>
+
+      <g fill="#5C3D21" fill-opacity="0.48" font-family="Georgia, serif" font-style="italic" font-size="16" letter-spacing="4">
+        <text x="145" y="95">TERRA INCOGNITA · ANNO DOMINI MCMLXXVI</text>
+        <text x="725" y="475" font-size="14" letter-spacing="5">AFRICA AUSTRALIS</text>
+        <text x="975" y="795" font-size="13" letter-spacing="3">MARE AUSTRALE · 50° HORIZONS</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Toast Banner -->
+  <div id="toastBanner" role="status" aria-live="polite"
+       class="fixed bottom-5 right-5 z-50 max-w-sm bg-espresso-900 text-sand-50 px-5 py-3.5 rounded-2xl shadow-2xl border border-gold-400/40 flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <span class="w-2.5 h-2.5 rounded-full bg-gold-400 shrink-0"></span>
+    <p id="toastMessage" class="text-sm font-medium"></p>
+  </div>
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-sand-50/85 border-b border-sand-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <span class="w-9 h-9 rounded-full bg-terracotta-500/12 border border-terracotta-500/30 flex items-center justify-center text-terracotta-600 group-hover:bg-terracotta-500 group-hover:text-white transition-colors">
+          <svg class="w-4 h-4 compass-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9" />
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+          </svg>
+        </span>
+        <div>
+          <span class="font-serif text-lg sm:text-xl font-bold tracking-tight text-espresso-900">Marselle · 50</span>
+          <span class="hidden sm:inline-block ml-2 text-[11px] uppercase tracking-widest text-ocean-600 font-semibold">Est. 1976</span>
+        </div>
+      </a>
+
+      <nav aria-label="Page sections" class="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-medium">
+        <a href="#south-africa-1976" class="px-3 py-2 rounded-full text-espresso-800 hover:bg-sand-200/70 transition-colors">1976 SA</a>
+        <a href="#world-1976" class="px-3 py-2 rounded-full text-espresso-800 hover:bg-sand-200/70 transition-colors">1976 World</a>
+        <a href="#polaroids" class="px-3 py-2 rounded-full text-espresso-800 hover:bg-sand-200/70 transition-colors">Polaroids</a>
+        <a href="#gift-experience" class="px-3.5 py-2 rounded-full bg-terracotta-500 text-white hover:bg-terracotta-600 shadow-sm transition-colors">Gift Box</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO -->
+    <section id="hero" class="relative pt-10 pb-20 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 overflow-hidden">
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-80 h-80 sm:w-[28rem] sm:h-[28rem] rounded-full border border-gold-400/20 flex items-center justify-center">
+          <div class="w-64 h-64 sm:w-96 sm:h-96 rounded-full border border-dashed border-terracotta-400/25 compass-spin"></div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-sand-100/90 to-transparent"></div>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-7 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sand-100 border border-gold-400/40 text-ocean-700 text-xs sm:text-sm font-semibold tracking-wide mb-6 shadow-xs">
+              <svg class="w-4 h-4 text-terracotta-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L19 21L12 17L5 21L12 2Z" />
+              </svg>
+              <span>HALF A CENTURY OF HORIZONS &amp; DISCOVERY</span>
+            </div>
+
+            <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.03] tracking-tight text-espresso-900">
+              Happy <span class="text-terracotta-500 italic font-semibold">50th</span> Birthday
+              <span class="block mt-1 text-ocean-700">Marselle</span>
+            </h1>
+
+            <p class="mt-6 text-base sm:text-lg text-espresso-800/85 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              From golden coastal roads and winding mountain passes to unplanned detours and unforgettable sunsets—here’s to fifty vibrant years of curiosity, courage, and chasing new horizons.
+            </p>
+
+            <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs sm:text-sm">
+              <div class="px-4 py-2 rounded-xl bg-white/90 border border-sand-200 shadow-xs flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-terracotta-500"></span>
+                <span class="font-semibold text-espresso-900">Born 1976</span>
+                <span class="text-espresso-800/60">· Golden Edition</span>
+              </div>
+              <div class="px-4 py-2 rounded-xl bg-white/90 border border-sand-200 shadow-xs flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-ocean-500"></span>
+                <span class="font-semibold text-espresso-900">Next Stop: 50+</span>
+                <span class="text-espresso-800/60">· Endless Stamps</span>
+              </div>
+            </div>
+
+            <div class="mt-9 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
+              <a href="#south-africa-1976"
+                 class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transition-all">
+                <span>Start the Journey</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="relative mx-auto max-w-md bg-white rounded-3xl p-6 sm:p-8 border border-sand-200 shadow-xl">
+              <div class="flex items-center justify-between border-b border-dashed border-sand-300 pb-4 mb-5">
+                <div>
+                  <p class="text-[11px] uppercase tracking-[0.2em] text-terracotta-600 font-bold">Expedition Log</p>
+                  <p class="font-serif text-2xl font-bold text-espresso-900">50 Trips Around the Sun</p>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-ocean-500/10 border border-ocean-500/25 flex items-center justify-center text-ocean-600 font-serif font-bold text-xl">
+                  50
+                </div>
+              </div>
+
+              <div class="rounded-2xl overflow-hidden bg-gradient-to-b from-ocean-600 via-ocean-500 to-terracotta-400 p-5 text-white relative">
+                <svg viewBox="0 0 400 185" class="w-full h-auto" role="img" aria-label="Stylized sun over rolling dunes and ocean waves">
+                  <circle cx="290" cy="64" r="34" fill="#F2D37E" opacity="0.95" />
+                  <circle cx="290" cy="64" r="46" fill="#F2D37E" opacity="0.22" />
+                  <path d="M0 125 Q85 78 175 118 T350 105 L400 112 L400 185 L0 185 Z" fill="#1D5259" opacity="0.75" />
+                  <path d="M0 138 Q120 112 245 142 T400 132 L400 185 L0 185 Z" fill="#C45D3B" />
+                  <path d="M0 156 Q160 138 310 162 T400 154 L400 185 L0 185 Z" fill="#7D341E" />
+                  <path d="M45 92 Q165 26 285 58" fill="none" stroke="#FDFBF7" stroke-width="2" stroke-dasharray="5 5" opacity="0.85" />
+                  <polygon points="285,58 271,53 276,63 285,58" fill="#FDFBF7" />
+                </svg>
+
+                <div class="mt-3 flex items-center justify-between text-xs text-sand-50/95">
+                  <span class="font-medium">“Not all who wander are lost—some are celebrating 50!”</span>
+                </div>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-dashed border-sand-300 flex items-center justify-between text-xs text-espresso-800/75">
+                <span>Scroll down for 1976 SA facts</span>
+                <span class="font-semibold text-terracotta-600">↓ Explore</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-16 flex items-center gap-4">
+          <span class="text-xs font-semibold uppercase tracking-widest text-terracotta-600 shrink-0">Route Leg 01</span>
+          <div class="dashed-route flex-1"></div>
+          <span class="text-xs font-medium text-espresso-800/60 shrink-0">1976 · South Africa</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: FUN SOUTH AFRICA FACTS FROM 1976 -->
+    <section id="south-africa-1976" class="py-20 sm:py-28 bg-sand-100/75 border-y border-sand-200/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal-item max-w-3xl">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-ocean-500/12 text-ocean-700 text-xs font-bold uppercase tracking-wider mb-3">
+            Year of Birth · 1976
+          </span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-bold text-espresso-900 leading-tight">
+            Fun South Africa Facts from <span class="text-terracotta-500 italic">1976</span>
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-espresso-800/80 leading-relaxed">
+            A snapshot of culture, soundtracks, wildlife, and big milestones in South Africa during the year Marselle arrived—filter by category or tap any card to highlight a favorite memory.
+          </p>
+        </div>
+
+        <div id="factFilters" class="reveal-item mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter 1976 South Africa facts">
+          <button type="button" data-filter="all"
+                  class="fact-filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-espresso-900 text-white shadow-xs transition-all">
+            All Highlights
+          </button>
+          <button type="button" data-filter="culture"
+                  class="fact-filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-espresso-800 border border-sand-300 hover:border-terracotta-400 transition-all">
+            Culture &amp; TV
+          </button>
+          <button type="button" data-filter="music"
+                  class="fact-filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-espresso-800 border border-sand-300 hover:border-terracotta-400 transition-all">
+            Soundtrack &amp; Arts
+          </button>
+          <button type="button" data-filter="nature"
+                  class="fact-filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-espresso-800 border border-sand-300 hover:border-terracotta-400 transition-all">
+            Nature &amp; Places
+          </button>
+          <button type="button" data-filter="sport"
+                  class="fact-filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-espresso-800 border border-sand-300 hover:border-terracotta-400 transition-all">
+            Icons &amp; Sport
+          </button>
+        </div>
+
+        <div id="factsGrid" class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+        <div class="reveal-item mt-10 p-5 sm:p-6 rounded-2xl bg-white border border-gold-400/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-gold-400/20 text-gold-500 flex items-center justify-center shrink-0 font-serif font-bold text-xl">
+              ✦
+            </div>
+            <div>
+              <p class="font-semibold text-espresso-900 text-sm sm:text-base">1976 → 2026: Fifty Years of Adventure</p>
+              <p class="text-xs sm:text-sm text-espresso-800/75">Every great expedition starts with a single stamp—next, see what else was happening around the globe in 1976.</p>
+            </div>
+          </div>
+          <a href="#world-1976" class="shrink-0 px-4 py-2.5 rounded-full bg-ocean-600 hover:bg-ocean-700 text-white text-xs sm:text-sm font-semibold transition-colors">
+            Next: World Almanac 1976 →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2B: AROUND THE WORLD IN 1976 (4 FUN FACTS) -->
+    <section id="world-1976" class="py-20 sm:py-28 bg-sand-50/70 border-b border-sand-200/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal-item mb-10 flex items-center gap-4">
+          <span class="text-xs font-semibold uppercase tracking-widest text-ocean-600 shrink-0">Route Leg 02</span>
+          <div class="dashed-route flex-1"></div>
+          <span class="text-xs font-medium text-espresso-800/60 shrink-0">Global Almanac · 1976</span>
+        </div>
+
+        <div class="reveal-item max-w-3xl">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-gold-400/25 text-espresso-900 border border-gold-400/40 text-xs font-bold uppercase tracking-wider mb-3">
+            Global Dispatch · 1976
+          </span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-bold text-espresso-900 leading-tight">
+            Around the World in <span class="text-ocean-600 italic">1976</span>
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-espresso-800/80 leading-relaxed">
+            While South Africa was making history at home, 1976 was also a landmark year for global music, supersonic travel, space exploration, and a star-studded birthday class.
+          </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <article class="reveal-item rounded-3xl p-6 sm:p-7 bg-white/95 border border-sand-200 shadow-sm hover:shadow-md hover:border-terracotta-400/70 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-3 mb-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracotta-500/12 text-terracotta-600 text-xs font-bold uppercase tracking-wider">
+                  <span>★</span> Class of 1976
+                </span>
+                <span class="text-xs font-semibold text-espresso-800/55">Birthday Roster</span>
+              </div>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-espresso-900 leading-snug">
+                Famous Icons Born in 1976
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-espresso-800/80 leading-relaxed">
+                Marselle shares her milestone birth year with an unforgettable lineup of beloved screen legends—including <span class="font-semibold text-espresso-900">Ryan Reynolds</span>, <span class="font-semibold text-espresso-900">Reese Witherspoon</span>, <span class="font-semibold text-espresso-900">Colin Farrell</span>, and <span class="font-semibold text-espresso-900">Benedict Cumberbatch</span>.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-dashed border-sand-200 flex items-center justify-between text-xs text-espresso-800/70">
+              <span>50th Birthday Club</span>
+              <span class="font-semibold text-terracotta-600">Vintage 1976</span>
+            </div>
+          </article>
+
+          <article class="reveal-item rounded-3xl p-6 sm:p-7 bg-white/95 border border-sand-200 shadow-sm hover:shadow-md hover:border-ocean-400/70 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-3 mb-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ocean-500/12 text-ocean-700 text-xs font-bold uppercase tracking-wider">
+                  <span>✈</span> Breakthroughs
+                </span>
+                <span class="text-xs font-semibold text-espresso-800/55">Inventions &amp; Travel</span>
+              </div>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-espresso-900 leading-snug">
+                Supersonic Flight &amp; Early Tech
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-espresso-800/80 leading-relaxed">
+                In January 1976, <span class="font-semibold text-espresso-900">Concorde</span> entered commercial passenger service—crossing the Atlantic at twice the speed of sound—while <span class="font-semibold text-espresso-900">Apple I</span> helped spark the home-computer revolution.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-dashed border-sand-200 flex items-center justify-between text-xs text-espresso-800/70">
+              <span>Mach 2 &amp; Microchips</span>
+              <span class="font-semibold text-ocean-600">Explorer Era</span>
+            </div>
+          </article>
+
+          <article class="reveal-item rounded-3xl p-6 sm:p-7 bg-white/95 border border-sand-200 shadow-sm hover:shadow-md hover:border-gold-400/80 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-3 mb-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/25 text-espresso-900 text-xs font-bold uppercase tracking-wider">
+                  <span>♪</span> No. 1 Song
+                </span>
+                <span class="text-xs font-semibold text-espresso-800/55">1976 Soundtrack</span>
+              </div>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-espresso-900 leading-snug">
+                “Silly Love Songs” by Wings
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-espresso-800/80 leading-relaxed">
+                Paul McCartney and Wings topped the 1976 Billboard year-end chart with <span class="font-semibold text-espresso-900">“Silly Love Songs”</span>, alongside chart-topping anthems from ABBA, Elton John &amp; Kiki Dee, and Wild Cherry.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-dashed border-sand-200 flex items-center justify-between text-xs text-espresso-800/70">
+              <span>1976 Chart Topper</span>
+              <span class="font-semibold text-gold-500">Golden Vinyl</span>
+            </div>
+          </article>
+
+          <article class="reveal-item rounded-3xl p-6 sm:p-7 bg-white/95 border border-sand-200 shadow-sm hover:shadow-md hover:border-terracotta-400/70 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-3 mb-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ocean-500/12 text-ocean-700 text-xs font-bold uppercase tracking-wider">
+                  <span>✦</span> Beyond Earth
+                </span>
+                <span class="text-xs font-semibold text-espresso-800/55">Mars &amp; Milestones</span>
+              </div>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-espresso-900 leading-snug">
+                First Clear Photos from Mars
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-espresso-800/80 leading-relaxed">
+                In July 1976, NASA’s <span class="font-semibold text-espresso-900">Viking 1</span> lander touched down on Mars and transmitted the first high-resolution surface panoramas from another planet—the ultimate long-distance expedition.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-dashed border-sand-200 flex items-center justify-between text-xs text-espresso-800/70">
+              <span>July 1976</span>
+              <span class="font-semibold text-terracotta-600">New Frontiers</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: POLAROID PHOTO GALLERY -->
+    <section id="polaroids" class="py-20 sm:py-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal-item flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="max-w-2xl">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-terracotta-500/12 text-terracotta-600 text-xs font-bold uppercase tracking-wider mb-3">
+              Travel Scrapbook · Polaroids
+            </span>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-espresso-900 leading-tight">
+              Snapshots Along the <span class="text-ocean-600 italic">Open Road</span>
+            </h2>
+            <p class="mt-3 text-base sm:text-lg text-espresso-800/80">
+              Our favorite moments with Marselle—update the <code class="px-1.5 py-0.5 rounded bg-sand-200/80 text-xs font-mono">POLAROID_MEMORIES</code> list in the code with your own photo URLs and captions. Click any Polaroid to view it larger.
+            </p>
+          </div>
+        </div>
+
+        <div id="polaroidGrid" class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: INTERACTIVE SPINNING 3D GIFT BOX & MEAL EXPERIENCE VOUCHER -->
+    <section id="gift-experience" class="py-20 sm:py-28 bg-gradient-to-b from-sand-100/80 to-sand-200/70 border-t border-sand-200">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal-item text-center max-w-2xl mx-auto">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-gold-400/25 text-espresso-900 border border-gold-400/40 text-xs font-bold uppercase tracking-wider mb-3">
+            Final Stop · Birthday Surprise
+          </span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-bold text-espresso-900 leading-tight">
+            Unwrap Your <span class="text-terracotta-500 italic">50th</span> Adventure Gift
+          </h2>
+          <p class="mt-3 text-base sm:text-lg text-espresso-800/80">
+            Hover or tap the spinning gift box to pause and lift the lid—revealing a special culinary experience waiting for you.
+          </p>
+        </div>
+
+        <div id="giftStageContainer" class="reveal-item relative mt-12 rounded-3xl bg-white/90 backdrop-blur-xs border border-sand-200 shadow-xl p-6 sm:p-10 overflow-hidden">
+          <div id="confettiLayer" class="pointer-events-none absolute inset-0 overflow-hidden z-20"></div>
+
+          <div id="closedGiftView" class="py-6 sm:py-10 flex flex-col items-center justify-center text-center">
+            <div class="gift-float">
+              <div class="gift-stage py-4">
+                <div id="giftRotator"
+                     class="gift-rotator auto-spin"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Spinning birthday gift box. Click to open and reveal your meal experience voucher."
+                     onmouseenter="setGiftPaused(true)"
+                     onmouseleave="setGiftPaused(false)"
+                     onclick="openGiftBox()"
+                     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGiftBox();}">
+
+                  <div class="gift-lid-assembly">
+                    <div class="lid-face lid-front"><div class="lid-ribbon-v"></div></div>
+                    <div class="lid-face lid-back"><div class="lid-ribbon-v"></div></div>
+                    <div class="lid-face lid-right"><div class="lid-ribbon-v"></div></div>
+                    <div class="lid-face lid-left"><div class="lid-ribbon-v"></div></div>
+                    <div class="lid-face lid-top">
+                      <div class="lid-top-ribbon-x"></div>
+                      <div class="lid-top-ribbon-y"></div>
+                      <div class="bow-knot"></div>
+                    </div>
+                  </div>
+
+                  <div class="gift-face gift-front">
+                    <div class="ribbon-v"></div>
+                    <div class="ribbon-h"></div>
+                  </div>
+                  <div class="gift-face gift-back">
+                    <div class="ribbon-v"></div>
+                    <div class="ribbon-h"></div>
+                  </div>
+                  <div class="gift-face gift-right">
+                    <div class="ribbon-v"></div>
+                    <div class="ribbon-h"></div>
+                  </div>
+                  <div class="gift-face gift-left">
+                    <div class="ribbon-v"></div>
+                    <div class="ribbon-h"></div>
+                  </div>
+                  <div class="gift-face gift-bottom"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <button type="button" onclick="openGiftBox()"
+                      class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transition-all cursor-pointer">
+                <span>Click or Tap to Open Gift Box</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+              <p class="mt-3 text-xs text-espresso-800/60">
+                Tip: Hover over the box to steady its spin, then click to unbox your surprise.
+              </p>
+            </div>
+          </div>
+
+          <div id="voucherRevealView" class="hidden">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-ocean-500/12 text-ocean-700 text-xs font-bold uppercase tracking-wider">
+                <span>✓</span> Gift Box Opened · Meal Experience Unlocked
+              </span>
+              <button type="button" onclick="resetGiftBox()"
+                      class="text-xs sm:text-sm font-semibold text-terracotta-600 hover:text-terracotta-700 underline underline-offset-4 cursor-pointer">
+                Close &amp; Spin Box Again
+              </button>
+            </div>
+
+            <div id="voucherCard" class="rounded-3xl bg-gradient-to-br from-ocean-700 via-ocean-600 to-espresso-900 text-sand-50 p-6 sm:p-10 shadow-voucher border border-gold-400/50 relative overflow-hidden">
+              <div aria-hidden="true" class="pointer-events-none absolute -right-16 -top-16 w-64 h-64 rounded-full border border-gold-400/20"></div>
+              <div aria-hidden="true" class="pointer-events-none absolute -left-16 -bottom-16 w-56 h-56 rounded-full border border-dashed border-gold-300/20"></div>
+
+              <div class="relative flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-dashed border-gold-300/35 pb-6">
+                <div>
+                  <p class="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-gold-300 font-bold">
+                    50th Birthday Culinary Passport · Golden Voucher
+                  </p>
+                  <h3 id="voucherTitleDisplay" class="mt-1.5 font-serif text-3xl sm:text-4xl font-bold text-white">
+                    A Chef’s Table &amp; Sunset Tasting Experience
+                  </h3>
+                </div>
+                <div class="shrink-0 self-start lg:self-center px-4 py-2.5 rounded-2xl bg-gold-400/15 border border-gold-400/45 text-left lg:text-right">
+                  <p class="text-[10px] uppercase tracking-widest text-gold-300">Voucher No.</p>
+                  <p id="voucherCodeDisplay" class="font-mono text-sm sm:text-base font-bold text-white tracking-wider">MARSELLE-50-FEAST</p>
+                </div>
+              </div>
+
+              <div class="relative mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                <div class="rounded-2xl bg-white/8 border border-white/12 p-4">
+                  <p class="text-[11px] uppercase tracking-wider text-gold-300 font-semibold">Destination / Venue</p>
+                  <p id="voucherVenueDisplay" class="mt-1 font-serif text-xl font-semibold text-white">Your Favorite Coastal or Winery Table</p>
+                </div>
+                <div class="rounded-2xl bg-white/8 border border-white/12 p-4">
+                  <p class="text-[11px] uppercase tracking-wider text-gold-300 font-semibold">Guests &amp; Date</p>
+                  <p id="voucherGuestsDisplay" class="mt-1 font-serif text-xl font-semibold text-white">Marselle + Traveling Companions · Flexible Date</p>
+                </div>
+                <div class="rounded-2xl bg-white/8 border border-white/12 p-4">
+                  <p class="text-[11px] uppercase tracking-wider text-gold-300 font-semibold">Includes</p>
+                  <p id="voucherIncludesDisplay" class="mt-1 font-serif text-xl font-semibold text-white">Multi-Course Meal, Drinks &amp; Birthday Toast</p>
+                </div>
+              </div>
+
+              <div class="relative mt-6 rounded-2xl bg-sand-50 text-espresso-900 p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs uppercase tracking-widest text-terracotta-600 font-bold">Personal Note for Marselle</p>
+                  <p id="voucherNoteDisplay" class="mt-1 font-handwriting text-2xl sm:text-3xl text-espresso-900 leading-snug">
+                    “Happy 50th Birthday, Marselle! Here’s to great food, bold adventures, and many more stamps in your passport.”
+                  </p>
+                </div>
+                <div class="shrink-0 flex flex-wrap gap-2.5">
+                  <button type="button" onclick="copyVoucherSummary()"
+                          class="px-4 py-2.5 rounded-xl bg-ocean-600 hover:bg-ocean-700 text-white text-xs sm:text-sm font-semibold transition-colors cursor-pointer">
+                    Copy Voucher Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-espresso-900 text-sand-100 py-12 border-t border-gold-400/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="font-serif text-2xl font-bold text-white">Happy 50th Birthday, Marselle</p>
+        <p class="text-xs sm:text-sm text-sand-200/70 mt-0.5">Celebrating 1976 → 2026 · Built with love for an extraordinary explorer</p>
+      </div>
+      <a href="#hero" class="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs sm:text-sm font-medium text-sand-50 transition-colors">
+        Back to Top ↑
+      </a>
+    </div>
+  </footer>
+
+  <!-- Polaroid Lightbox Modal -->
+  <div id="polaroidModal"
+       class="fixed inset-0 z-50 hidden items-center justify-center bg-espresso-900/80 backdrop-blur-xs p-4"
+       role="dialog" aria-modal="true" aria-labelledby="modalPolaroidCaption"
+       onclick="if(event.target === this) closePolaroidModal()">
+    <div class="bg-white rounded-2xl p-4 sm:p-6 max-w-xl w-full shadow-2xl transform transition-all">
+      <div class="flex items-center justify-between mb-3">
+        <span id="modalPolaroidDate" class="text-xs font-semibold uppercase tracking-widest text-terracotta-600"></span>
+        <button type="button" onclick="closePolaroidModal()" aria-label="Close photo preview"
+                class="w-8 h-8 rounded-full bg-sand-100 hover:bg-sand-200 flex items-center justify-center text-espresso-900 font-bold cursor-pointer">
+          ✕
+        </button>
+      </div>
+      <div class="aspect-[4/3] w-full rounded-xl overflow-hidden bg-sand-100">
+        <img id="modalPolaroidImg" src="" alt="" class="w-full h-full object-cover" />
+      </div>
+      <p id="modalPolaroidCaption" class="mt-4 font-handwriting text-3xl text-espresso-900 text-center"></p>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // EASY-TO-EDIT POLAROID PHOTOS & CAPTIONS
+    // Replace `imageUrl` with your own image links or local files (e.g. "images/trip1.jpg")
+    // =========================================================================
+    const POLAROID_MEMORIES = [
+      {
+        id: 'pol-1',
+        imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80',
+        caption: 'Golden hour by the coast—adventures with Marselle',
+        location: 'Coastal Escape',
+        tilt: '-2.5deg'
+      },
+      {
+        id: 'pol-2',
+        imageUrl: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=80',
+        caption: 'Open highways & big skies—where to next?',
+        location: 'Scenic Roadtrip',
+        tilt: '2deg'
+      },
+      {
+        id: 'pol-3',
+        imageUrl: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80',
+        caption: 'Safari mornings & unforgettable wildlife views',
+        location: 'Bushveld Trail',
+        tilt: '-1.5deg'
+      },
+      {
+        id: 'pol-4',
+        imageUrl: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80',
+        caption: 'Mirror-still waters and mountain reflections',
+        location: 'Alpine Lake',
+        tilt: '2.5deg'
+      },
+      {
+        id: 'pol-5',
+        imageUrl: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=900&q=80',
+        caption: 'Chasing horizons together—best travel crew',
+        location: 'Overlook Point',
+        tilt: '-2deg'
+      },
+      {
+        id: 'pol-6',
+        imageUrl: 'https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=900&q=80',
+        caption: 'Packed bags & fifty reasons to celebrate!',
+        location: 'Passport Stamp #50',
+        tilt: '1.5deg'
+      }
+    ];
+
+    // =========================================================================
+    // EASY-TO-EDIT MEAL EXPERIENCE VOUCHER DETAILS
+    // Update any of these fields to customize the surprise revealed in the gift box
+    // =========================================================================
+    const MEAL_VOUCHER_DETAILS = {
+      title: 'A Chef’s Table & Sunset Tasting Experience',
+      code: 'MARSELLE-50-FEAST',
+      venue: 'Your Favorite Coastal or Winery Table',
+      guests: 'Marselle + Traveling Companions · Flexible Date',
+      includes: 'Three course <a href="https://www.londonsteakhousecompany.com/wp-content/uploads/2023/03/Three-Course-And-Cocktail-Set-Menu.pdf" target="_blank" rel="noopener noreferrer" class="underline text-gold-300 hover:text-white">set-menu</a>',
+      note: '“Happy 50th Birthday, Marselle! Here’s to great food, bold adventures, and many more stamps in your passport.”'
+    };
+
+    const SA_FACTS_1976 = [
+      {
+        id: 'sa-1',
+        category: 'culture',
+        badge: 'Television',
+        title: 'South Africa’s First TV Broadcasts Begun',
+        yearTag: 'January 1976',
+        summary: 'Regular public television broadcasts launched in South Africa on 5 January 1976, initially airing in English and Afrikaans and bringing shared living-room moments into homes nationwide.',
+        highlight: 'A brand-new screen era began the year Marselle was born.'
+      },
+      {
+        id: 'sa-2',
+        category: 'music',
+        badge: 'Soundtrack',
+        title: 'Iconic Sounds & Storytelling Took Flight',
+        yearTag: '1976 Soundscape',
+        summary: 'Mid-1970s South African jazz, mbaqanga, and folk-rock continued resonating across townships, concert halls, and radio waves—blending rhythm, resilience, and unmistakable warmth.',
+        highlight: 'Timeless rhythms that still feel vibrant five decades later.'
+      },
+      {
+        id: 'sa-3',
+        category: 'nature',
+        badge: 'Wilderness & Coast',
+        title: 'From Table Mountain to the Kruger Wilds',
+        yearTag: '1976 Landscapes',
+        summary: 'In 1976, travelers exploring South Africa could already trace dramatic contrasts—from Cape Peninsula cliffs and Winelands valleys to vast savanna reserves teeming with wildlife.',
+        highlight: 'A dream playground for anyone who loves to explore.'
+      },
+      {
+        id: 'sa-4',
+        category: 'sport',
+        badge: 'Sporting Spirit',
+        title: 'Big Matches & Passionate Crowds',
+        yearTag: '1976 Sport',
+        summary: 'Rugby, cricket, and local athletics drew fierce weekend devotion across stadiums and clubs in 1976, turning every match day into a lively community gathering.',
+        highlight: 'Weekend energy and hometown pride in full swing.'
+      },
+      {
+        id: 'sa-5',
+        category: 'culture',
+        badge: 'Everyday Life',
+        title: 'Road Trips, Padkos & Coastal Drives',
+        yearTag: '1976 Road Culture',
+        summary: 'Long-distance drives between cities and seaside towns were classic adventures—complete with packed picnic boxes, paper road maps, and spontaneous stops at scenic viewpoints.',
+        highlight: 'Pure road-trip energy made for a true explorer.'
+      },
+      {
+        id: 'sa-6',
+        category: 'nature',
+        badge: 'Botanical Wonder',
+        title: 'The Cape Floristic Kingdom',
+        yearTag: 'Fynbos & Proteas',
+        summary: 'South Africa’s Cape floral region—home to iconic king proteas and thousands of unique plant species found nowhere else on Earth—stood out as one of the planet’s richest botanical treasures.',
+        highlight: 'One-of-a-kind natural beauty, just like Marselle.'
+      }
+    ];
+
+    let activeFactFilter = 'all';
+    let favoriteFactIds = new Set();
+    let isGiftOpened = false;
+
+    function showToast(message) {
+      const banner = document.getElementById('toastBanner');
+      const textEl = document.getElementById('toastMessage');
+      if (!banner || !textEl) return;
+      textEl.textContent = message;
+      banner.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      banner.classList.add('translate-y-0', 'opacity-100');
+
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        banner.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        banner.classList.remove('translate-y-0', 'opacity-100');
+      }, 3200);
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function renderFacts() {
+      const grid = document.getElementById('factsGrid');
+      if (!grid) return;
+
+      const filtered = activeFactFilter === 'all'
+        ? SA_FACTS_1976
+        : SA_FACTS_1976.filter(f => f.category === activeFactFilter);
+
+      grid.innerHTML = filtered.map(fact => {
+        const isFav = favoriteFactIds.has(fact.id);
+        return `
+          <article onclick="toggleFavoriteFact('${fact.id}')"
+                   class="reveal-item is-visible group cursor-pointer rounded-2xl p-6 bg-white border ${isFav ? 'border-terracotta-500 ring-2 ring-terracotta-500/20' : 'border-sand-200 hover:border-terracotta-400/70'} shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${isFav ? 'bg-terracotta-500 text-white' : 'bg-sand-100 text-ocean-700'}">
+                  ${escapeHtml(fact.badge)}
+                </span>
+                <span class="text-xs font-semibold text-espresso-800/55">${escapeHtml(fact.yearTag)}</span>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-espresso-900 group-hover:text-terracotta-600 transition-colors">
+                ${escapeHtml(fact.title)}
+              </h3>
+              <p class="mt-2.5 text-sm text-espresso-800/80 leading-relaxed">
+                ${escapeHtml(fact.summary)}
+              </p>
+            </div>
+
+            <div class="mt-5 pt-3.5 border-t border-dashed border-sand-200 flex items-center justify-between text-xs">
+              <span class="text-espresso-800/70 italic">${escapeHtml(fact.highlight)}</span>
+              <span class="ml-2 shrink-0 font-bold ${isFav ? 'text-terracotta-600' : 'text-espresso-800/40 group-hover:text-terracotta-500'}">
+                ${isFav ? '♥ Saved' : '♡ Pin'}
+              </span>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function toggleFavoriteFact(id) {
+      if (favoriteFactIds.has(id)) {
+        favoriteFactIds.delete(id);
+        showToast('Removed highlight pin');
+      } else {
+        favoriteFactIds.add(id);
+        showToast('Pinned 1976 South Africa highlight!');
+      }
+      renderFacts();
+    }
+
+    function initFactFilters() {
+      const buttons = document.querySelectorAll('.fact-filter-btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeFactFilter = btn.getAttribute('data-filter') || 'all';
+          buttons.forEach(b => {
+            const selected = b === btn;
+            b.classList.toggle('bg-espresso-900', selected);
+            b.classList.toggle('text-white', selected);
+            b.classList.toggle('bg-white', !selected);
+            b.classList.toggle('text-espresso-800', !selected);
+            b.classList.toggle('border', !selected);
+            b.classList.toggle('border-sand-300', !selected);
+          });
+          renderFacts();
+        });
+      });
+    }
+
+    function renderPolaroids() {
+      const grid = document.getElementById('polaroidGrid');
+      if (!grid) return;
+
+      grid.innerHTML = POLAROID_MEMORIES.map((item) => {
+        const safeUrl = escapeHtml(item.imageUrl);
+        const safeCaption = escapeHtml(item.caption);
+        const safeLocation = escapeHtml(item.location || 'Travel Memory');
+        const safeTilt = escapeHtml(item.tilt || '0deg');
+
+        return `
+          <figure class="reveal-item is-visible polaroid-card flex flex-col" style="transform: rotate(${safeTilt});">
+            <div onclick="openPolaroidModal('${safeUrl}', '${safeCaption}', '${safeLocation}')"
+                 class="relative aspect-[4/3] w-full rounded-xs overflow-hidden bg-sand-100 cursor-zoom-in group">
+              <img src="${safeUrl}" alt="${safeCaption}" loading="lazy"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full bg-espresso-900/75 text-white text-[11px] font-medium backdrop-blur-2xs">
+                Expand ⤢
+              </span>
+            </div>
+
+            <div class="pt-4 px-1">
+              <p class="font-handwriting text-2xl sm:text-[26px] leading-snug text-espresso-900">
+                ${safeCaption}
+              </p>
+              <div class="mt-2 flex items-center justify-between text-[11px] text-espresso-800/55">
+                <span>📍 ${safeLocation}</span>
+                <span>Click photo to zoom</span>
+              </div>
+            </div>
+          </figure>
+        `;
+      }).join('');
+    }
+
+    function openPolaroidModal(src, caption, location) {
+      const modal = document.getElementById('polaroidModal');
+      const img = document.getElementById('modalPolaroidImg');
+      const cap = document.getElementById('modalPolaroidCaption');
+      const loc = document.getElementById('modalPolaroidDate');
+      if (!modal || !img || !cap || !loc) return;
+
+      img.src = src;
+      img.alt = caption;
+      cap.textContent = caption;
+      loc.textContent = location || 'Travel Memory';
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closePolaroidModal() {
+      const modal = document.getElementById('polaroidModal');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function setGiftPaused(paused) {
+      const rotator = document.getElementById('giftRotator');
+      if (!rotator || isGiftOpened) return;
+      rotator.classList.toggle('paused', paused);
+    }
+
+    function openGiftBox() {
+      if (isGiftOpened) return;
+      isGiftOpened = true;
+
+      const stage = document.getElementById('giftStageContainer');
+      const rotator = document.getElementById('giftRotator');
+      const closedView = document.getElementById('closedGiftView');
+      const voucherView = document.getElementById('voucherRevealView');
+
+      if (stage) stage.classList.add('gift-box-opened');
+      if (rotator) {
+        rotator.classList.remove('auto-spin');
+        rotator.style.transform = 'rotateX(-12deg) rotateY(18deg)';
+      }
+
+      launchConfetti();
+      showToast('Surprise! Your 50th birthday meal voucher is revealed!');
+
+      setTimeout(() => {
+        if (closedView) closedView.classList.add('hidden');
+        if (voucherView) voucherView.classList.remove('hidden');
+      }, 480);
+    }
+
+    function resetGiftBox() {
+      isGiftOpened = false;
+      const stage = document.getElementById('giftStageContainer');
+      const rotator = document.getElementById('giftRotator');
+      const closedView = document.getElementById('closedGiftView');
+      const voucherView = document.getElementById('voucherRevealView');
+
+      if (voucherView) voucherView.classList.add('hidden');
+      if (closedView) closedView.classList.remove('hidden');
+      if (stage) stage.classList.remove('gift-box-opened');
+      if (rotator) {
+        rotator.style.transform = '';
+        rotator.classList.remove('paused');
+        rotator.classList.add('auto-spin');
+      }
+    }
+
+    function launchConfetti() {
+      const layer = document.getElementById('confettiLayer');
+      if (!layer) return;
+      layer.innerHTML = '';
+
+      const colors = ['#C45D3B', '#D4A843', '#276B73', '#F2D37E', '#D47656'];
+      for (let i = 0; i < 36; i++) {
+        const piece = document.createElement('span');
+        piece.className = 'confetti-piece';
+        const left = Math.random() * 100;
+        const delay = Math.random() * 0.35;
+        const size = 7 + Math.random() * 7;
+        piece.style.left = `${left}%`;
+        piece.style.width = `${size}px`;
+        piece.style.height = `${size * 0.65}px`;
+        piece.style.backgroundColor = colors[i % colors.length];
+        piece.style.animationDelay = `${delay}s`;
+        layer.appendChild(piece);
+      }
+    }
+
+    function populateVoucherDisplay() {
+      const map = {
+        voucherTitleDisplay: MEAL_VOUCHER_DETAILS.title,
+        voucherCodeDisplay: MEAL_VOUCHER_DETAILS.code,
+        voucherVenueDisplay: MEAL_VOUCHER_DETAILS.venue,
+        voucherGuestsDisplay: MEAL_VOUCHER_DETAILS.guests,
+        voucherIncludesDisplay: MEAL_VOUCHER_DETAILS.includes,
+        voucherNoteDisplay: MEAL_VOUCHER_DETAILS.note
+      };
+      Object.entries(map).forEach(([id, value]) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (id === 'voucherIncludesDisplay') {
+          el.innerHTML = value;
+        } else {
+          el.textContent = value;
+        }
+      });
+    }
+
+    function copyVoucherSummary() {
+      const cleanIncludes = MEAL_VOUCHER_DETAILS.includes.replace(/<[^>]*>/g, '');
+      const summary = [
+        `🎉 ${MEAL_VOUCHER_DETAILS.title} (${MEAL_VOUCHER_DETAILS.code})`,
+        `Venue: ${MEAL_VOUCHER_DETAILS.venue}`,
+        `Guests & Date: ${MEAL_VOUCHER_DETAILS.guests}`,
+        `Includes: ${cleanIncludes}`,
+        `Note: ${MEAL_VOUCHER_DETAILS.note}`
+      ].join('\n');
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(summary)
+          .then(() => showToast('Meal voucher details copied to clipboard!'))
+          .catch(() => showToast('Ready to share: ' + MEAL_VOUCHER_DETAILS.title));
+      } else {
+        showToast('Ready to share: ' + MEAL_VOUCHER_DETAILS.title);
+      }
+    }
+
+    function initScrollReveal() {
+      const items = document.querySelectorAll('.reveal-item');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      items.forEach(el => observer.observe(el));
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePolaroidModal();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initFactFilters();
+      renderFacts();
+      renderPolaroids();
+      populateVoucherDisplay();
+      initScrollReveal();
+    });
+  </script>
+</body>
+</html>
